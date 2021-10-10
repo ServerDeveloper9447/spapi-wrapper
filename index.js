@@ -18,7 +18,7 @@ async function getRealurl(url) {
     if (!url) {
         console.log("[SPAPI-Wrapper: getRealurl()]: No URL provided.")
     } else {
-    const fetched = await fetch(misc + `/realurl?url=${encodeURIcomponent(url)}`)
+    const fetched = await fetch(misc + `/realurl?url=${encodeURIComponent(url)}`)
     return (await fetched.json())
     }
 }
@@ -26,7 +26,7 @@ async function lengthenURL(url) {
     if (!url) {
         console.log("[SPAPI-Wrapper: lengthenURL()]: No URL provided.")
     } else {
-    const fetched = await fetch(misc + `/lengthen?url=${encodeURIcomponent(url)}`)
+    const fetched = await fetch(misc + `/lengthen?url=${encodeURIComponent(url)}`)
     return (await fetched.json())
     }
 }
@@ -34,7 +34,7 @@ async function getMock(text) {
     if (!text) {
         console.log("[SPAPI-Wrapper: getMock()]: No text provided.")
     } else {
-    const fetched = await fetch(misc + `/mock?text=${encodeURIcomponent(text)}`)
+    const fetched = await fetch(misc + `/mock?text=${encodeURIComponent(text)}`)
     return (await fetched.json())
     }
 }
@@ -42,7 +42,7 @@ async function getCovid(countryname) {
     if (!countryname) {
         console.log("[SPAPI-Wrapper: getCovid()]: No country name provided.")
     } else {
-    const fetched = await fetch(misc + `/covidcountry?country=${encodeURIcomponent(countryname)}`)
+    const fetched = await fetch(misc + `/covidcountry?country=${encodeURIComponent(countryname)}`)
     return (await fetched.json())
     }
 }
@@ -50,7 +50,7 @@ async function getIp(ip) {
     if (!ip) {
         console.log("[SPAPI-Wrapper: getIp()]: No ip provided.")
     } else {
-    const fetched = await fetch(misc + `/ipinfo?ip=${encodeURIcomponent(ip)}`)
+    const fetched = await fetch(misc + `/ipinfo?ip=${encodeURIComponent(ip)}`)
     return (await  fetched.json())
     }
 }
@@ -60,7 +60,7 @@ async function convertMorse(method, message) {
         console.log("[SPAPI-Wrapper: convertMorse()]: No method provided.")
     } else {
         if (method === "encode") {
-            const fetched = await fetch(misc + `/morse/encode?message=${encodeURIcomponent(message)}`)
+            const fetched = await fetch(misc + `/morse/encode?message=${encodeURIComponent(message)}`)
             return (await fetched.json())
         } else if (method === "decode") {
             const fetched = await fetch(misc + `/morse/decode?message=${encodeURIComponent(message)}`)
