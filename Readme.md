@@ -1,6 +1,5 @@
 # ***SPAPI Wrapper***
-## Api Wrapper for **[SPAPI]**
-<img src="https://cdn.glitch.me/2a4d780f-b9e8-4739-9886-831c1d5fcdb0%2FPicture1.png?v=1633772049771" height="200" width="200" align="right">
+## Api Wrapper for **[SPAPI]**<img src="https://cdn.glitch.me/2a4d780f-b9e8-4739-9886-831c1d5fcdb0%2FPicture1.png?v=1633772049771" height="200" width="200" align="right">
 
 ![Rating: 4.5]
 ![Developer]
