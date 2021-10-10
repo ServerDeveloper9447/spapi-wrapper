@@ -4,6 +4,7 @@ const baseurl = "https://api.spapi.ga"
 const misc = baseurl + "/misc"
 const fun = baseurl + "/fun"
 const anime = baseurl + "/anime"
+const image = baseurl + "/image"
 // Misc Endpoints
 async function genPassword() {
     try {
@@ -299,6 +300,30 @@ async function getAnimeInfo(animename) {
     }
 }
 //end of anime endpoints
+
+// Image endpoints
+async function renderColor(hex) {
+    if (!hex) {
+        console.log("[SPAPI-Wrapper: renderColor()]: No hex provided.")
+    } else {
+    return (image + `/render?hex=${encodeURIComponent(hex)}`)
+    }
+}
+async function getQR(text) {
+    if (!text) {
+        console.log("[SPAPI-Wrapper: getQR()]: No text provided.")
+    } else {
+        return (image + `/qrcode?text=${encodeURIComponent(text)}`)
+    }
+}
+async function renderFlag(country) {
+    if (!country) {
+        console.log("[SPAPI-Wrapper: renderFlag()]: No country name provided.")
+    } else {
+        return (image + `/flag?country=${encodeURIComponent(country)}`)
+    }
+}
+// end of image endpoints
 module.exports = {
     genPassword,
     getRealurl,
@@ -337,5 +362,8 @@ module.exports = {
     getGithubProfile,
     getAllAnime,
     getAnimeCharacter,
-    getAnimeInfo
+    getAnimeInfo,
+    renderColor,
+    getQR,
+    renderFlag
 }
