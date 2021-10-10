@@ -1,0 +1,22 @@
+{
+  "name": "spapi-wrapper",
+  "version": "1.0.0",
+  "description": "A wrapper made for the SP-API.",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Server Developer#9447 aka Duck Dev",
+  "license": "MIT",
+  "keywords": [
+    "api",
+    "spapi",
+    "sp",
+    "sp-api",
+    "spapi wrapper"
+  ]
+}
