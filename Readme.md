@@ -34,6 +34,7 @@ Want to suggest a endpoint? Just join the discord server and suggest there.
 ## Changes in v1.0.1
 ```diff
 + Fixed encodeURIcomponent not defined
++ Changed the error logging from console.log to return
 ```
 **Upcoming changes**
 ```ini
