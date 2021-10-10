@@ -11,12 +11,12 @@ async function genPassword() {
     const fetched = await fetch(misc + "/genpass")
     return (await fetched.json())
     } catch(error) {
-        console.log("[SPAPI-Wrapper: genPass()]: Something broke.")
+        return("[SPAPI-Wrapper: genPass()]: Something broke.")
     }
 }
 async function getRealurl(url) {
     if (!url) {
-        console.log("[SPAPI-Wrapper: getRealurl()]: No URL provided.")
+        return("[SPAPI-Wrapper: getRealurl()]: No URL provided.")
     } else {
     const fetched = await fetch(misc + `/realurl?url=${encodeURIComponent(url)}`)
     return (await fetched.json())
@@ -24,7 +24,7 @@ async function getRealurl(url) {
 }
 async function lengthenURL(url) {
     if (!url) {
-        console.log("[SPAPI-Wrapper: lengthenURL()]: No URL provided.")
+        return("[SPAPI-Wrapper: lengthenURL()]: No URL provided.")
     } else {
     const fetched = await fetch(misc + `/lengthen?url=${encodeURIComponent(url)}`)
     return (await fetched.json())
@@ -32,7 +32,7 @@ async function lengthenURL(url) {
 }
 async function getMock(text) {
     if (!text) {
-        console.log("[SPAPI-Wrapper: getMock()]: No text provided.")
+        return("[SPAPI-Wrapper: getMock()]: No text provided.")
     } else {
     const fetched = await fetch(misc + `/mock?text=${encodeURIComponent(text)}`)
     return (await fetched.json())
@@ -40,7 +40,7 @@ async function getMock(text) {
 }
 async function getCovid(countryname) {
     if (!countryname) {
-        console.log("[SPAPI-Wrapper: getCovid()]: No country name provided.")
+        return("[SPAPI-Wrapper: getCovid()]: No country name provided.")
     } else {
     const fetched = await fetch(misc + `/covidcountry?country=${encodeURIComponent(countryname)}`)
     return (await fetched.json())
@@ -48,7 +48,7 @@ async function getCovid(countryname) {
 }
 async function getIp(ip) {
     if (!ip) {
-        console.log("[SPAPI-Wrapper: getIp()]: No ip provided.")
+        return("[SPAPI-Wrapper: getIp()]: No ip provided.")
     } else {
     const fetched = await fetch(misc + `/ipinfo?ip=${encodeURIComponent(ip)}`)
     return (await  fetched.json())
@@ -57,7 +57,7 @@ async function getIp(ip) {
 async function convertMorse(method, message) {
     try {
     if (!method) {
-        console.log("[SPAPI-Wrapper: convertMorse()]: No method provided.")
+        return("[SPAPI-Wrapper: convertMorse()]: No method provided.")
     } else {
         if (method === "encode") {
             const fetched = await fetch(misc + `/morse/encode?message=${encodeURIComponent(message)}`)
@@ -66,16 +66,16 @@ async function convertMorse(method, message) {
             const fetched = await fetch(misc + `/morse/decode?message=${encodeURIComponent(message)}`)
             return (await fetched.json())
         } else {
-            console.log("[SPAPI-Wrapper: convertMorse()]: Invalid method provided.")
+            return("[SPAPI-Wrapper: convertMorse()]: Invalid method provided.")
         }
     }
 } catch(error) {
-    console.log("[SPAPI-Wrapper: convertMorse()]: Something broke at converMorse()")
+    return("[SPAPI-Wrapper: convertMorse()]: Something broke at converMorse()")
 }
 }
 async function getBinary(message) {
     if (!message) {
-        console.log("[SPAPI-Wrapper: getBinary()]: No message provided.")
+        return("[SPAPI-Wrapper: getBinary()]: No message provided.")
     } else {
     const fetched = await fetch(misc + `/binary?query=${encodeURIComponent(message)}`)
     return (await fetched.json())
@@ -101,7 +101,7 @@ async function getJoke() {
     const fetched = await fetch(fun + '/joke')
     return (await fetched.json())
     } catch(error) {
-        console.log("[SPAPI-Wrapper: getJoke()]: Something broke at getJoke()")
+        return("[SPAPI-Wrapper: getJoke()]: Something broke at getJoke()")
     }
 }
 async function getQuestionoftheday() {
@@ -122,7 +122,7 @@ async function getMeme() {
 }
 async function owofy(text) {
     if (!text) {
-        console.log("[SPAPI-Wrapper: owofy()]: No text provided.")
+        return("[SPAPI-Wrapper: owofy()]: No text provided.")
     } else {
     const fetched = await fetch(fun + `/owofy?text=${encodeURIComponent(text)}`)
     return (await fetched.json())
@@ -130,7 +130,7 @@ async function owofy(text) {
 }
 async function getAscii(text) {
     if (!text) {
-        console.log("[SPAPI-Wrapper: getAscii()]: No text provided.")
+        return("[SPAPI-Wrapper: getAscii()]: No text provided.")
     } else {
     const fetched = await fetch(fun + `/ascii?text=${encodeURIComponent(text)}`)
     return (await fetched.json())
@@ -138,7 +138,7 @@ async function getAscii(text) {
 }
 async function chatbot(message, owner, botname, user) {
     if (!message && !owner && !botname && !user) {
-        console.log("[SPAPI-Wrapper: chatbot()]: No message, owner, botname or user is provided. Make to provide all params.")
+        return("[SPAPI-Wrapper: chatbot()]: No message, owner, botname or user is provided. Make to provide all params.")
     } else {
     const fetched = await fetch(fun + `/chatbot?message=${encodeURIComponent(message)}&owner=${encodeURIComponent(owner)}&botname=${encodeURIComponent(botname)}&user=${encodeURIComponent(user)}`)
     return (await fetched.json())
@@ -146,7 +146,7 @@ async function chatbot(message, owner, botname, user) {
 }
 async function getColor(hex) {
     if (!hex) {
-        console.log("[SPAPI-Wrapper: getColor()]: No color hex provided.")
+        return("[SPAPI-Wrapper: getColor()]: No color hex provided.")
     } else {
     const fetched = await fetch(fun + `/color?hex=${encodeURIComponent(hex)}`)
     return (await fetched.json())
@@ -154,7 +154,7 @@ async function getColor(hex) {
 }
 async function define(word) {
     if (!word) {
-        console.log("[SPAPI-Wrapper: define()]: No word provided.")
+        return("[SPAPI-Wrapper: define()]: No word provided.")
     } else {
     const fetched = await fetch(fun + `/define?word=${encodeURIComponent(word)}`)
     return (await fetched.json())
@@ -162,7 +162,7 @@ async function define(word) {
 }
 async function getMovie(movie) {
     if (!movie) {
-        console.log("[SPAPI-Wrapper: getMovie()]: No movie name provided.")
+        return("[SPAPI-Wrapper: getMovie()]: No movie name provided.")
     } else {
     const fetched = await fetch(fun + `/movie?movname=${encodeURIComponent(movie)}`)
     return (await fetched.json())
@@ -170,7 +170,7 @@ async function getMovie(movie) {
 }
 async function getMoviePoster(movie) {
     if (!movie) {
-        console.log("[SPAPI-Wrapper: getMoviePoster()]: No movie name provided.")
+        return("[SPAPI-Wrapper: getMoviePoster()]: No movie name provided.")
     } else {
     const fetched = await fetch(fun + `/movposter/${encodeURIComponent(movie)}`)
     return (await fetched.json())
@@ -178,7 +178,7 @@ async function getMoviePoster(movie) {
 }
 async function getSongLyrics(song) {
     if (!song) {
-        console.log("[SPAPI-Wrapper: getSongLyrics()]: No song name provided.")
+        return("[SPAPI-Wrapper: getSongLyrics()]: No song name provided.")
     } else {
     const fetched = await fetch(fun + `/lyrics?songname=${encodeURIComponent(song)}`)
     return (await fetched.json())
@@ -186,7 +186,7 @@ async function getSongLyrics(song) {
 }
 async function googlePlay(app) {
     if (!app) {
-        console.log("[SPAPI-Wrapper: googlePlay()]: No app name provided.")
+        return("[SPAPI-Wrapper: googlePlay()]: No app name provided.")
     } else {
         const fetched = await fetch(fun + `/playstore?app=${encodeURIComponent(app)}`)
         return (await fetched.json())
@@ -194,7 +194,7 @@ async function googlePlay(app) {
 }
 async function appstore(app) {
     if (!app) {
-        console.log("[SPAPI-Wrapper: appstore()]: No app name provided.")
+        return("[SPAPI-Wrapper: appstore()]: No app name provided.")
     } else {
         const fetched = await fetch(fun + `/appstore?app=${encodeURIComponent(app)}`)
         return (await fetched.json())
@@ -202,7 +202,7 @@ async function appstore(app) {
 }
 async function getNPM(package) {
     if (!package) {
-        console.log("[SPAPI-Wrapper: getNPM()]: No package name provided")
+        return("[SPAPI-Wrapper: getNPM()]: No package name provided")
     } else {
         const fetched = await fetch(fun + `/npm?pkg=${encodeURIComponent(package)}`)
         return (await fetched.json())
@@ -210,7 +210,7 @@ async function getNPM(package) {
 }
 async function bitlyShorten(url, token) {
     if (!url && !token) {
-        console.log("[SPAPI-Wrapper: bitlyShorten()]: No URL or token provided. Make sure to provide both params.")
+        return("[SPAPI-Wrapper: bitlyShorten()]: No URL or token provided. Make sure to provide both params.")
     } else {
         const fetched = await fetch(fun + `/shorten?url=${encodeURIComponent(url)}&token=${encodeURIComponent(token)}`)
         return (await fetched.json())
@@ -218,7 +218,7 @@ async function bitlyShorten(url, token) {
 }
 async function bitlyExpand(url, token) {
     if (!url && !token) {
-        console.log("[SPAPI-Wrapper: bitlyExpand()]: No URL or token provided. Make sure to provide both params.")
+        return("[SPAPI-Wrapper: bitlyExpand()]: No URL or token provided. Make sure to provide both params.")
     } else {
         const fetched = await fetch(fun + `/expand?url=${encodeURIComponent(url)}&token=${encodeURIComponent(token)}`)
         return (await fetched.json())
@@ -226,7 +226,7 @@ async function bitlyExpand(url, token) {
 }
 async function translate(text, to) {
     if (!text && !to) {
-        console.log("[SPAPI-Wrapper: translate()]: No text or 'to language' provided. Make sure to provide both.")
+        return("[SPAPI-Wrapper: translate()]: No text or 'to language' provided. Make sure to provide both.")
     } else {
         const fetched = await fetch(fun + `/translate?text=${encodeURIComponent(text)}&to=${encodeURIComponent(to)}`)
         return (await fetched.json())
@@ -234,7 +234,7 @@ async function translate(text, to) {
 }
 async function getWeather(place) {
     if (!place) {
-        console.log("[SPAPI-Wrapper: getWeather()]: No place provided.")
+        return("[SPAPI-Wrapper: getWeather()]: No place provided.")
     } else {
         const fetched = await fetch(fun + `/weather?place=${encodeURIComponent(place)}`)
         return (await fetched.json())
@@ -242,7 +242,7 @@ async function getWeather(place) {
 }
 async function getUserBanner(userid) {
     if (!userid) {
-        console.log("[SPAPI-Wrapper: getUserBanner()]: No user id provided.")
+        return("[SPAPI-Wrapper: getUserBanner()]: No user id provided.")
     } else {
         const fetched = await fetch(fun + `/discord?userid=${encodeURIComponent(userid)}`)
         return (await fetched.json())
@@ -253,12 +253,12 @@ async function getPickupLine() {
         const fetched = await fetch(fun + '/pickup')
         return (await fetched.json())
     } catch(error) {
-        console.log("[SPAPI-Wrapper: getPickupLine()]: Something Broke.")
+        return("[SPAPI-Wrapper: getPickupLine()]: Something Broke.")
     }
 }
 async function youtubeChannel(channelName) {
     if (!channelName) {
-        console.log("[SPAPI-Wrapper: youtubeChannel()]: No channel name provided.")
+        return("[SPAPI-Wrapper: youtubeChannel()]: No channel name provided.")
     } else {
         const fetched = await fetch(fun + `/ytchannel?channel=${encodeURIComponent(channelName)}`)
         return (await fetched.json())
@@ -266,7 +266,7 @@ async function youtubeChannel(channelName) {
 }
 async function getGithubProfile(username) {
     if (!username) {
-        console.log("[SPAPI-Wrapper: getGithubProfile()]: No username provided")
+        return("[SPAPI-Wrapper: getGithubProfile()]: No username provided")
     } else {
         const fetched = await fetch(fun + `/githubuser?user=${encodeURIComponent(username)}`)
         return (await fetched.json())
@@ -280,12 +280,12 @@ async function getAllAnime() {
         const fetched = await fetch(anime + '/all')
         return (await fetched.json())
     } catch(error) {
-        console.log("[SPAPI-Wrapper: getAllAnime()]: Something broke.")
+        return("[SPAPI-Wrapper: getAllAnime()]: Something broke.")
     }
 }
 async function getAnimeCharacter(characterName) {
     if (!characterName) {
-        console.log("[SPAPI-Wrapper: getAnimeCharacter()]: No character name provided.")
+        return("[SPAPI-Wrapper: getAnimeCharacter()]: No character name provided.")
     } else {
         const fetched = await fetch(anime + `/animechar?char=${encodeURIComponent(characterName)}`)
         return (await fetched.json())
@@ -293,7 +293,7 @@ async function getAnimeCharacter(characterName) {
 }
 async function getAnimeInfo(animename) {
     if (!animename) {
-        console.log("[SPAPI-Wrapper: getAnimeInfo()]: No anime name provided.")
+        return("[SPAPI-Wrapper: getAnimeInfo()]: No anime name provided.")
     } else {
         const fetched = await fetch(anime + `/info?anime=${encodeURIComponent(animename)}`)
         return (await fetched.json())
@@ -304,21 +304,21 @@ async function getAnimeInfo(animename) {
 // Image endpoints
 async function renderColor(hex) {
     if (!hex) {
-        console.log("[SPAPI-Wrapper: renderColor()]: No hex provided.")
+        return("[SPAPI-Wrapper: renderColor()]: No hex provided.")
     } else {
     return (image + `/render?hex=${encodeURIComponent(hex)}`)
     }
 }
 async function getQR(text) {
     if (!text) {
-        console.log("[SPAPI-Wrapper: getQR()]: No text provided.")
+        return("[SPAPI-Wrapper: getQR()]: No text provided.")
     } else {
         return (image + `/qrcode?text=${encodeURIComponent(text)}`)
     }
 }
 async function renderFlag(country) {
     if (!country) {
-        console.log("[SPAPI-Wrapper: renderFlag()]: No country name provided.")
+        return("[SPAPI-Wrapper: renderFlag()]: No country name provided.")
     } else {
         return (image + `/flag?country=${encodeURIComponent(country)}`)
     }
