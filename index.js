@@ -9,7 +9,8 @@ const image = baseurl + "/image"
 async function genPassword() {
     try {
     const fetched = await fetch(misc + "/genpass")
-    return (await fetched.json())
+    const pass = await fetched.json()
+    return (pass.password)
     } catch(error) {
         return("[SPAPI-Wrapper: genPass()]: Something broke.")
     }
@@ -19,7 +20,8 @@ async function getRealurl(url) {
         return("[SPAPI-Wrapper: getRealurl()]: No URL provided.")
     } else {
     const fetched = await fetch(misc + `/realurl?url=${encodeURIComponent(url)}`)
-    return (await fetched.json())
+    const realurl = await fetched.json()
+    return (realurl.realurl)
     }
 }
 async function lengthenURL(url) {
@@ -27,7 +29,8 @@ async function lengthenURL(url) {
         return("[SPAPI-Wrapper: lengthenURL()]: No URL provided.")
     } else {
     const fetched = await fetch(misc + `/lengthen?url=${encodeURIComponent(url)}`)
-    return (await fetched.json())
+    const lgnt = await fetched.json()
+    return (await lgnt.lengthened)
     }
 }
 async function getMock(text) {
@@ -35,7 +38,8 @@ async function getMock(text) {
         return("[SPAPI-Wrapper: getMock()]: No text provided.")
     } else {
     const fetched = await fetch(misc + `/mock?text=${encodeURIComponent(text)}`)
-    return (await fetched.json())
+    const mock = await fetched.json()
+    return (mock.mocked)
     }
 }
 async function getCovid(countryname) {
@@ -61,10 +65,12 @@ async function convertMorse(method, message) {
     } else {
         if (method === "encode") {
             const fetched = await fetch(misc + `/morse/encode?message=${encodeURIComponent(message)}`)
-            return (await fetched.json())
+            const en = await fetched.json()
+            return (en.encoded)
         } else if (method === "decode") {
             const fetched = await fetch(misc + `/morse/decode?message=${encodeURIComponent(message)}`)
-            return (await fetched.json())
+            const de = await fetched.json()
+            return (de.decoded)
         } else {
             return("[SPAPI-Wrapper: convertMorse()]: Invalid method provided.")
         }
@@ -78,7 +84,8 @@ async function getBinary(message) {
         return("[SPAPI-Wrapper: getBinary()]: No message provided.")
     } else {
     const fetched = await fetch(misc + `/binary?query=${encodeURIComponent(message)}`)
-    return (await fetched.json())
+    const converted = await fetched.json()
+    return (converted.converted)
     }
 }
 //end of misc endpoints
@@ -94,23 +101,27 @@ async function getAnifact() {
 }
 async function get8ball() {
     const fetched = await fetch(fun + '/8ball')
-    return (await fetched.json())
+    const res = await fetched.json()
+    return (res.response)
 }
 async function getJoke() {
     try {
     const fetched = await fetch(fun + '/joke')
-    return (await fetched.json())
+    const joke = await fetched.json()
+    return (joke.joke)
     } catch(error) {
         return("[SPAPI-Wrapper: getJoke()]: Something broke at getJoke()")
     }
 }
 async function getQuestionoftheday() {
     const fetched = await fetch(fun + '/qotd')
-    return (await fetched.json())
+    const qotd = await fetched.json()
+    return (qotd.qotd)
 }
 async function getRandomFact() {
     const fetched = await fetch(fun + '/fact')
-    return (await fetched.json())
+    const fact = await fetched.json()
+    return (fact.fact)
 }
 async function getRandomQuote() {
     const fetched = await fetch(fun + '/quote')
@@ -125,7 +136,8 @@ async function owofy(text) {
         return("[SPAPI-Wrapper: owofy()]: No text provided.")
     } else {
     const fetched = await fetch(fun + `/owofy?text=${encodeURIComponent(text)}`)
-    return (await fetched.json())
+    const owo = await fetched.json()
+    return (owo.response)
     }
 }
 async function getAscii(text) {
@@ -133,7 +145,8 @@ async function getAscii(text) {
         return("[SPAPI-Wrapper: getAscii()]: No text provided.")
     } else {
     const fetched = await fetch(fun + `/ascii?text=${encodeURIComponent(text)}`)
-    return (await fetched.json())
+    const asc = await fetched.json()
+    return (asc.ascii)
     }
 }
 async function chatbot(message, owner, botname, user) {
@@ -141,7 +154,8 @@ async function chatbot(message, owner, botname, user) {
         return("[SPAPI-Wrapper: chatbot()]: No message, owner, botname or user is provided. Make to provide all params.")
     } else {
     const fetched = await fetch(fun + `/chatbot?message=${encodeURIComponent(message)}&owner=${encodeURIComponent(owner)}&botname=${encodeURIComponent(botname)}&user=${encodeURIComponent(user)}`)
-    return (await fetched.json())
+    const res = await fetched.json()
+    return (res.response)
     }
 }
 async function getColor(hex) {
@@ -181,7 +195,8 @@ async function getSongLyrics(song) {
         return("[SPAPI-Wrapper: getSongLyrics()]: No song name provided.")
     } else {
     const fetched = await fetch(fun + `/lyrics?songname=${encodeURIComponent(song)}`)
-    return (await fetched.json())
+    const ly = await fetched.json()
+    return (ly.lyrics)
     }
 }
 async function googlePlay(app) {
@@ -251,7 +266,8 @@ async function getUserBanner(userid) {
 async function getPickupLine() {
     try {
         const fetched = await fetch(fun + '/pickup')
-        return (await fetched.json())
+        const p = await fetched.json()
+        return (p.pickup)
     } catch(error) {
         return("[SPAPI-Wrapper: getPickupLine()]: Something Broke.")
     }
@@ -269,6 +285,14 @@ async function getGithubProfile(username) {
         return("[SPAPI-Wrapper: getGithubProfile()]: No username provided")
     } else {
         const fetched = await fetch(fun + `/githubuser?user=${encodeURIComponent(username)}`)
+        return (await fetched.json())
+    }
+}
+async function getCountry(country) {
+    if (!country) {
+        return("[SPAPI-Wrapper: getCountry()]: No country name provided.")
+    } else {
+        const fetched = await fetch(fun + `/countryinfo?name=${encodeURIComponent(country)}`)
         return (await fetched.json())
     }
 }
@@ -323,6 +347,13 @@ async function renderFlag(country) {
         return (image + `/flag?country=${encodeURIComponent(country)}`)
     }
 }
+async function minecraftBlock(block) {
+    if (!block) {
+        return("[SPAPI-Wrapper: minecraftBlock()]: No block name provided.")
+    } else {
+        return (image + `/image/minecraftblock?block=${encodeURIComponent(block)}`)
+    }
+}
 // end of image endpoints
 module.exports = {
     genPassword,
@@ -360,10 +391,12 @@ module.exports = {
     getPickupLine,
     youtubeChannel,
     getGithubProfile,
+    getCountry,
     getAllAnime,
     getAnimeCharacter,
     getAnimeInfo,
     renderColor,
     getQR,
-    renderFlag
+    renderFlag,
+    minecraftBlock
 }

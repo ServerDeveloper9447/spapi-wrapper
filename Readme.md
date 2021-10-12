@@ -18,7 +18,7 @@
 ---
 
 **Note: All functions are async functions.**<br>
-**Docs for this wrapper will be published here: [WIKI]**
+**Docs are not published yet.**
 
 ---
 
@@ -31,17 +31,23 @@ Want to suggest a endpoint? Just join the discord server and suggest there.
 
 ---
 
-## Changes in v1.0.1
+## Changes in v1.1.0
 ```diff
-+ Fixed encodeURIcomponent not defined
-+ Changed the error logging from console.log to return
++ Added getCountry()
++ Added minecraftBlock()
++ Improved fetching in some functions
+
+- Screenshot endpoint cannot be added as it may require an key in the future. Join support server to stay updated.
 ```
 **Upcoming changes**
 ```ini
-[Improve the API]
-[Improve endpoint fetching]
-[More endpoints]
+[More Endpoints]
 ```
+---
+### Packages from the same developer (Promoted)
+1. **[aly_facts]**
+2. **[shot-on-iphone]**
+---
 
 [SPAPI]: https://api.spapi.ga
 [License]: https://img.shields.io/badge/License-MIT-blue
@@ -51,3 +57,5 @@ Want to suggest a endpoint? Just join the discord server and suggest there.
 [our discord server]: https://discord.gg/VqA92g8
 [repo]: https://github.com/ServerDeveloper9447/spapi-wrapper
 [Server Developer#9447]: https://duck.is-a.dev
+[aly_facts]: https://www.npmjs.com/package/aly_facts
+[shot-on-iphone]: https://www.npmjs.com/package/shot-on-iphone
