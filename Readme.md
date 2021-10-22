@@ -31,14 +31,13 @@ Want to suggest a endpoint? Just join the discord server and suggest there.
 
 ---
 
-## Changes in v1.1.0
+## Changes in v1.1.1
 ```diff
-+ Added getCountry()
-+ Added minecraftBlock()
-+ Improved fetching in some functions
++ Changed base url
 
 - Screenshot endpoint cannot be added as it may require an key in the future. Join support server to stay updated.
 ```
+### If you're in our support server then you probably know that the api recently experienced a ddos attack. Thats why we changed the URL and now making a v2 of the API. Versions before 1.1.1 will no longer work
 **Upcoming changes**
 ```ini
 [More Endpoints]
