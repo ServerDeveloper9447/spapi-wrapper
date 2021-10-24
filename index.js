@@ -88,6 +88,14 @@ async function getBinary(message) {
     return (converted.converted)
     }
 }
+async function covidInfo(country) {
+    if (!country) {
+        return("[SPAPI-Wrapper: covidInfo()]: No country provided.")
+    } else {
+        const fetched = await fetch(misc + `/covidcountry?country=${encodeURIComponent(country)}`)
+        return (await fetched.json())
+    }
+}
 //end of misc endpoints
 
 //Fun endpoints
@@ -149,6 +157,13 @@ async function getAscii(text) {
     return (asc.ascii)
     }
 }
+/**
+ * 
+ * @param {String} message 
+ * @param {String} owner 
+ * @param {String} botname 
+ * @param {Number} user 
+ */
 async function chatbot(message, owner, botname, user) {
     if (!message && !owner && !botname && !user) {
         return("[SPAPI-Wrapper: chatbot()]: No message, owner, botname or user is provided. Make to provide all params.")
@@ -255,6 +270,10 @@ async function getWeather(place) {
         return (await fetched.json())
     }
 }
+/**
+ * 
+ * @param {Number} userid 
+ */
 async function getUserBanner(userid) {
     if (!userid) {
         return("[SPAPI-Wrapper: getUserBanner()]: No user id provided.")
@@ -293,6 +312,36 @@ async function getCountry(country) {
         return("[SPAPI-Wrapper: getCountry()]: No country name provided.")
     } else {
         const fetched = await fetch(fun + `/countryinfo?name=${encodeURIComponent(country)}`)
+        return (await fetched.json())
+    }
+}
+async function steamSearch(app) {
+    if (!app) {
+        return("[SPAPI-Wrapper: steamSearch()]: No app provided.")
+    } else {
+        const fetched = await fetch(fun + `/steam?game=${encodeURIComponent(app)}`)
+        return (await fetched.json())
+    }
+}
+async function discordInvite(code) {
+    if (!code) {
+        return("[SPAPI-Wrapper: discordInvite()]: No code provided")
+    } else {
+        const no = ["https://", "discord.gg", "discord.com"]
+        const link = no.some(boo => `${code}`.includes(boo))
+        if (link === true) {
+            return("[SPAPI-Wrapper: discordInvite()]: Code must only include the invite code and no link.")
+        } else {
+            const fetched = await fetch(fun + `/inviteinfo?code=${encodeURIComponent(code)}`)
+            return (await fetched.json())
+        }
+    }
+}
+async function bookInfo(bookname) {
+    if (!bookname) {
+        return("[SPAPI-Wrapper: bookInfo()]: No bookname given.")
+    } else {
+        const fetched = await fetch(fun + `/bookinfo?book=${encodeURIComponent(bookname)}`)
         return (await fetched.json())
     }
 }
@@ -354,6 +403,19 @@ async function minecraftBlock(block) {
         return (image + `/image/minecraftblock?block=${encodeURIComponent(block)}`)
     }
 }
+async function screenshot(site) {
+    if (!site) {
+        return("[SPAPI-Wrapper: screenshot()]: No site given.")
+    } else {
+        const yes = ["https://", "http://"]
+        const must = yes.some(sh => `${site}`.includes(sh))
+        if (must === false) {
+            return ("[SPAPI-Wrapper: screenshot()]: Site must be an url.")
+        } else {
+            return (image + `/image/screenshot?site=${encodeURIComponent(site)}`)
+        }
+    }
+}
 // end of image endpoints
 module.exports = {
     genPassword,
@@ -364,6 +426,7 @@ module.exports = {
     getIp,
     convertMorse,
     getBinary,
+    covidInfo,
     getTod,
     getAnifact,
     get8ball,
@@ -392,11 +455,15 @@ module.exports = {
     youtubeChannel,
     getGithubProfile,
     getCountry,
+    steamSearch,
+    discordInvite,
+    bookInfo,
     getAllAnime,
     getAnimeCharacter,
     getAnimeInfo,
     renderColor,
     getQR,
     renderFlag,
-    minecraftBlock
+    minecraftBlock,
+    screenshot
 }
