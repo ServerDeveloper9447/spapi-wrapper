@@ -15,6 +15,10 @@ async function genPassword() {
         return("[SPAPI-Wrapper: genPass()]: Something broke.")
     }
 }
+/**
+ * 
+ * @param {String} url 
+ */
 async function getRealurl(url) {
     if (!url) {
         return("[SPAPI-Wrapper: getRealurl()]: No URL provided.")
@@ -24,6 +28,10 @@ async function getRealurl(url) {
     return (realurl.realurl)
     }
 }
+/**
+ * 
+ * @param {String} url 
+ */
 async function lengthenURL(url) {
     if (!url) {
         return("[SPAPI-Wrapper: lengthenURL()]: No URL provided.")
@@ -33,6 +41,10 @@ async function lengthenURL(url) {
     return (await lgnt.lengthened)
     }
 }
+/**
+ * 
+ * @param {String} text 
+ */
 async function getMock(text) {
     if (!text) {
         return("[SPAPI-Wrapper: getMock()]: No text provided.")
@@ -42,6 +54,10 @@ async function getMock(text) {
     return (mock.mocked)
     }
 }
+/**
+ * 
+ * @param {String} countryname 
+ */
 async function getCovid(countryname) {
     if (!countryname) {
         return("[SPAPI-Wrapper: getCovid()]: No country name provided.")
@@ -58,6 +74,12 @@ async function getIp(ip) {
     return (await  fetched.json())
     }
 }
+/**
+ * 
+ * @param {String} method 
+ * @param {String} message 
+ * @returns 
+ */
 async function convertMorse(method, message) {
     try {
     if (!method) {
@@ -79,6 +101,10 @@ async function convertMorse(method, message) {
     return("[SPAPI-Wrapper: convertMorse()]: Something broke at converMorse()")
 }
 }
+/**
+ * 
+ * @param {String} message
+ */
 async function getBinary(message) {
     if (!message) {
         return("[SPAPI-Wrapper: getBinary()]: No message provided.")
@@ -88,6 +114,10 @@ async function getBinary(message) {
     return (converted.converted)
     }
 }
+/**
+ * 
+ * @param {String} country 
+ */
 async function covidInfo(country) {
     if (!country) {
         return("[SPAPI-Wrapper: covidInfo()]: No country provided.")
@@ -139,6 +169,10 @@ async function getMeme() {
     const fetched = await fetch(fun + '/meme')
     return (await fetched.json())
 }
+/**
+ * 
+ * @param {String} text 
+ */
 async function owofy(text) {
     if (!text) {
         return("[SPAPI-Wrapper: owofy()]: No text provided.")
@@ -148,6 +182,10 @@ async function owofy(text) {
     return (owo.response)
     }
 }
+/**
+ * 
+ * @param {String} text 
+ */
 async function getAscii(text) {
     if (!text) {
         return("[SPAPI-Wrapper: getAscii()]: No text provided.")
@@ -173,6 +211,10 @@ async function chatbot(message, owner, botname, user) {
     return (res.response)
     }
 }
+/**
+ * 
+ * @param {String} hex 
+ */
 async function getColor(hex) {
     if (!hex) {
         return("[SPAPI-Wrapper: getColor()]: No color hex provided.")
@@ -181,6 +223,10 @@ async function getColor(hex) {
     return (await fetched.json())
     }
 }
+/**
+ * 
+ * @param {String} word 
+ */
 async function define(word) {
     if (!word) {
         return("[SPAPI-Wrapper: define()]: No word provided.")
@@ -189,6 +235,10 @@ async function define(word) {
     return (await fetched.json())
     }
 }
+/**
+ * 
+ * @param {String} movie 
+ */
 async function getMovie(movie) {
     if (!movie) {
         return("[SPAPI-Wrapper: getMovie()]: No movie name provided.")
@@ -197,6 +247,10 @@ async function getMovie(movie) {
     return (await fetched.json())
     }
 }
+/**
+ * 
+ * @param {String} movie 
+ */
 async function getMoviePoster(movie) {
     if (!movie) {
         return("[SPAPI-Wrapper: getMoviePoster()]: No movie name provided.")
@@ -205,6 +259,10 @@ async function getMoviePoster(movie) {
     return (await fetched.json())
     }
 }
+/**
+ * 
+ * @param {String} song 
+ */
 async function getSongLyrics(song) {
     if (!song) {
         return("[SPAPI-Wrapper: getSongLyrics()]: No song name provided.")
@@ -214,6 +272,10 @@ async function getSongLyrics(song) {
     return (ly.lyrics)
     }
 }
+/**
+ * 
+ * @param {String} app 
+ */
 async function googlePlay(app) {
     if (!app) {
         return("[SPAPI-Wrapper: googlePlay()]: No app name provided.")
@@ -375,35 +437,35 @@ async function getAnimeInfo(animename) {
 //end of anime endpoints
 
 // Image endpoints
-async function renderColor(hex) {
+function renderColor(hex) {
     if (!hex) {
         return("[SPAPI-Wrapper: renderColor()]: No hex provided.")
     } else {
     return (image + `/render?hex=${encodeURIComponent(hex)}`)
     }
 }
-async function getQR(text) {
+function getQR(text) {
     if (!text) {
         return("[SPAPI-Wrapper: getQR()]: No text provided.")
     } else {
         return (image + `/qrcode?text=${encodeURIComponent(text)}`)
     }
 }
-async function renderFlag(country) {
+function renderFlag(country) {
     if (!country) {
         return("[SPAPI-Wrapper: renderFlag()]: No country name provided.")
     } else {
         return (image + `/flag?country=${encodeURIComponent(country)}`)
     }
 }
-async function minecraftBlock(block) {
+function minecraftBlock(block) {
     if (!block) {
         return("[SPAPI-Wrapper: minecraftBlock()]: No block name provided.")
     } else {
-        return (image + `/image/minecraftblock?block=${encodeURIComponent(block)}`)
+        return (image + `/minecraftblock?block=${encodeURIComponent(block)}`)
     }
 }
-async function screenshot(site) {
+function screenshot(site) {
     if (!site) {
         return("[SPAPI-Wrapper: screenshot()]: No site given.")
     } else {
@@ -412,7 +474,7 @@ async function screenshot(site) {
         if (must === false) {
             return ("[SPAPI-Wrapper: screenshot()]: Site must be an url.")
         } else {
-            return (image + `/image/screenshot?site=${encodeURIComponent(site)}`)
+            return (image + `/screenshot?site=${encodeURIComponent(site)}`)
         }
     }
 }
