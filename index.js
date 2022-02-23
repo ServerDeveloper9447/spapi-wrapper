@@ -1,4 +1,3 @@
-const { error } = require('console')
 const fetch = require('node-fetch')
 const baseurl = "https://apiv1.spapi.ga"
 const misc = baseurl + "/misc"

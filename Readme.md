@@ -9,8 +9,8 @@
 ![License]
 
 ---
-**Note: This is the last release of this wrapper. This will not be updated. You may now check the v2 wrapper linked at the end of this page.**
-
+**Note: This is the last release of this wrapper. This will not be updated. You may now check the v2 wrapper linked at the end of this page.**<br>
+**[Panel](https://client.spapi.ga)**
 ---
 **For support join [our discord server]**<br>
 <br>
@@ -21,10 +21,10 @@ Want to suggest a endpoint? Just join the discord server and suggest there.
 
 ---
 
-## Changes in v2.0.0
+## Changes in v2.0.1
 ```diff
-+ Fixed some endpoints.
-+ Made image endpoints non asynchronous.
++ Updated fetch package to a non-vulnerable version
++ Removed useless code
 ```
 ### If you're in our support server then you probably know that the api recently experienced a ddos attack. ~~Thats why we changed the URL and now making a v2 of the API. Versions before 1.1.1 will no longer work~~<br> Old Versions will work again. Now both api.spapi.ga and apiv1.spapi.ga works same.
 ---
