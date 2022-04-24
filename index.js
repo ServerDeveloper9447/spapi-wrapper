@@ -164,8 +164,11 @@ async function getRandomQuote() {
     const fetched = await fetch(fun + '/quote')
     return (await fetched.json())
 }
-async function getMeme() {
-    const fetched = await fetch(fun + '/meme')
+/**
+ * @param {String} subreddit (Optional)
+ */
+async function getMeme(subreddit) {
+    const fetched = await fetch(fun + '/meme?sub=' + encodeURIComponent(subreddit))
     return (await fetched.json())
 }
 /**

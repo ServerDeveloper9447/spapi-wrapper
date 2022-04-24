@@ -23,8 +23,7 @@ Want to suggest a endpoint? Just join the discord server and suggest there.
 
 ## Changes in v2.0.1
 ```diff
-+ Updated fetch package to a non-vulnerable version
-+ Removed useless code
++ Added custom subreddit finding in meme endpoint
 ```
 ### If you're in our support server then you probably know that the api recently experienced a ddos attack. ~~Thats why we changed the URL and now making a v2 of the API. Versions before 1.1.1 will no longer work~~<br> Old Versions will work again. Now both api.spapi.ga and apiv1.spapi.ga works same.
 ---
