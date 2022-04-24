@@ -10,7 +10,7 @@
 
 ---
 **Note: This is the last release of this wrapper. This will not be updated. You may now check the v2 wrapper linked at the end of this page.**<br>
-**[Panel](https://client.spapi.ga)**
+# [![Panel](https://1288042104-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FpihcoO66xBcW3gEC7GCo%2Fuploads%2F4k7Gy86ZgmCNyqi4ogXr%2Fbanner%20api.png?alt=media&token=0da64d2c-78ec-411e-b9ee-e11ba06cfadf)](https://client.spapi.ga)
 ---
 **For support join [our discord server]**<br>
 <br>
