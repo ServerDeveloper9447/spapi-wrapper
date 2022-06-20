@@ -271,7 +271,7 @@ async function getSongLyrics(song) {
     } else {
     const fetched = await fetch(fun + `/lyrics?songname=${encodeURIComponent(song)}`)
     const ly = await fetched.json()
-    return (ly.lyrics)
+    return ly
     }
 }
 /**
