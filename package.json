@@ -1,6 +1,6 @@
 {
   "name": "spapi-wrapper",
-  "version": "2.0.1-readme",
+  "version": "2.0.2",
   "description": "A wrapper made for the SP-API.",
   "main": "index.js",
   "dependencies": {
