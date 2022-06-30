@@ -106,20 +106,20 @@ async function convertMorse(method, message) {
             try {const fetched = await fetch(misc + `/morse/encode?message=${encodeURIComponent(message)}`)
             const en = await fetched.json()
             return (en.encoded)} catch(err) {
-                throw new SPAPIerror("convertMorse()", "Something broke when encoding.")
+                throw new SPAPIerror("convertMorse()", err)
             }
         } else if (method === "decode") {
             try {const fetched = await fetch(misc + `/morse/decode?message=${encodeURIComponent(message)}`)
             const de = await fetched.json()
             return (de.decoded)} catch(err) {
-                throw new SPAPIerror("convertMorse()", "Something broke when decoding.")
+                throw new SPAPIerror("convertMorse()", err)
             }
         } else {
            throw new SPAPIerror("convertMorse()", "Invalid method.")
         }
     }
 } catch(error) {
-    throw new SPAPIerror("convertMorse()", "Something broke.")
+    throw new SPAPIerror("convertMorse()", error)
 }
 }
 /**
