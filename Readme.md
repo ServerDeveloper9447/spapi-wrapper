@@ -21,11 +21,13 @@ Want to suggest a endpoint? Just join the discord server and suggest there.
 
 ---
 
-## Changes in v2.0.1
+## Changes in v2.0.3
 ```diff
-+ Added custom subreddit finding in meme endpoint
++ Improved error logging. Now it logs error instead of returning "[Wrapper(): endpoint]: error" as a string
++ Added parameter types to all endpoints.
 ```
-### If you're in our support server then you probably know that the api recently experienced a ddos attack. ~~Thats why we changed the URL and now making a v2 of the API. Versions before 1.1.1 will no longer work~~<br> Old Versions will work again. Now both api.spapi.ga and apiv1.spapi.ga works same.
+### Versions before 1.1.1 will no longer work.
+**api.spapi.ga** is deprecated. Use apiv1.spapi.ga instead.
 ---
 # Announcing SPAPI-V2
 **Wrapper for V2 of spapi.
