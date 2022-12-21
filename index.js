@@ -205,7 +205,7 @@ async function getRandomQuote() {
 /**
  * @param {String} subreddit (Optional)
  */
-async function getMeme(subreddit) {
+async function getMeme(subreddit="") {
     try {const fetched = await fetch(fun + '/meme?sub=' + encodeURIComponent(subreddit))
     return (await fetched.json())} catch(err) {
         throw new SPAPIerror("getMeme()", err)
@@ -240,24 +240,6 @@ async function getAscii(text) {
         throw new SPAPIerror("getAscii()", err)
     }
 }
-}
-/**
- * 
- * @param {String} message 
- * @param {String} owner 
- * @param {String} botname 
- * @param {Number} user 
- */
-async function chatbot(message, owner, botname, user) {
-    if (!message && !owner && !botname && !user) {
-        throw new SPAPIerror("chatbot()", "No message, owner, botname, or user provided. Make sure to provide all of them.")
-    } else {
-    try {const fetched = await fetch(fun + `/chatbot?message=${encodeURIComponent(message)}&owner=${encodeURIComponent(owner)}&botname=${encodeURIComponent(botname)}&user=${encodeURIComponent(user)}`)
-    const res = await fetched.json()
-    return (res.response)} catch(err) {
-        throw new SPAPIerror("chatbot()", err)
-    }
-    }
 }
 /**
  * 
@@ -640,7 +622,6 @@ module.exports = {
     getMeme,
     owofy,
     getAscii,
-    chatbot,
     getColor,
     define,
     getMovie,
