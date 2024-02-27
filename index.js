@@ -1,5 +1,5 @@
 const fetch = require('node-fetch')
-const baseurl = "https://apiv1.spapi.ga"
+const baseurl = "https://apiv1.spapi.online"
 const misc = baseurl + "/misc"
 const fun = baseurl + "/fun"
 const anime = baseurl + "/anime"
@@ -95,7 +95,7 @@ async function getIp(ip) {
  * 
  * @param {String} method 
  * @param {String} message 
- * @returns 
+ * @returns "Morse encoded/decoded message"
  */
 async function convertMorse(method, message) {
     try {
@@ -342,13 +342,13 @@ async function appstore(app) {
 }
 /**
  * 
- * @param {String} package 
+ * @param {String} pkg 
  */
-async function getNPM(package) {
-    if (!package) {
+async function getNPM(pkg) {
+    if (!pkg) {
         throw new SPAPIerror("getNPM()", "No package provided.")
     } else {
-        try {const fetched = await fetch(fun + `/npm?pkg=${encodeURIComponent(package)}`)
+        try {const fetched = await fetch(fun + `/npm?pkg=${encodeURIComponent(pkg)}`)
         return (await fetched.json())}catch(err) {
             throw new SPAPIerror("getNPM()", err)
         }

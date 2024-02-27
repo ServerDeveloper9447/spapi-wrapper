@@ -10,7 +10,7 @@
 
 ---
 **Note: This is the last release of this wrapper. This will not be updated. You may now check the v2 wrapper linked at the end of this page.**<br>
-# [![Panel](https://1288042104-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FpihcoO66xBcW3gEC7GCo%2Fuploads%2F4k7Gy86ZgmCNyqi4ogXr%2Fbanner%20api.png?alt=media&token=0da64d2c-78ec-411e-b9ee-e11ba06cfadf)](https://client.spapi.ga)
+# [![Panel](https://1288042104-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FpihcoO66xBcW3gEC7GCo%2Fuploads%2F4k7Gy86ZgmCNyqi4ogXr%2Fbanner%20api.png?alt=media&token=0da64d2c-78ec-411e-b9ee-e11ba06cfadf)](https://client.spapi.online)
 ---
 **For support join [our discord server]**<br>
 <br>
@@ -27,7 +27,7 @@ Want to suggest a endpoint? Just join the discord server and suggest there.
 + Added parameter types to all endpoints.
 ```
 ### Versions before 1.1.1 will no longer work.
-**api.spapi.ga** is deprecated. Use apiv1.spapi.ga instead.
+**api.spapi.online** is deprecated. Use apiv1.spapi.online instead.
 ---
 # Announcing SPAPI-V2
 **Wrapper for V2 of spapi.
@@ -40,7 +40,7 @@ Want to suggest a endpoint? Just join the discord server and suggest there.
 3. **[gud-wrapper]**
 ---
 
-[SPAPI V1]: https://api.spapi.ga
+[SPAPI V1]: https://api.spapi.online
 [License]: https://img.shields.io/badge/License-MIT-blue
 [Developer]: https://img.shields.io/badge/Developer-Server%20Developer%239447-yellow
 [Rating: 5.0]: https://img.shields.io/badge/Rating-5.0-brightgreen
